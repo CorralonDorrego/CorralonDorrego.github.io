@@ -1,0 +1,265 @@
+* {
+    --color-principal : #3c7bef;
+    --color-secundario: #ffffff;
+    --color-detalles: #000000;
+    --color-destacado: #f4b761;
+    --tamaño-header: 97px;
+    --std-width: 1080px;
+
+    font-family: "Montserrat";
+}
+
+a {
+    color: unset;
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+body {
+    position: relative;
+    background-color: var(--color-secundario);
+    padding: 0;
+    margin: 0;
+}
+
+.header, .sub_header{
+    background-color: var(--color-principal);
+    color:var(--color-secundario);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 97px;
+    transition: height 0.4s ease;
+
+    font-size: 12.8px;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+.sub_header {
+    background-color: var(--color-detalles);
+    height: 30px;
+}
+
+.header>div, .sub_header>div {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: var(--std-width);
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    padding: 5px 15px;
+}
+
+.header_section, .sub_header_section {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    max-height: 100%;
+}
+
+.sub_header_button {
+    height: 100%;
+    width: fit-content;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+.sub_header_button>img {
+    margin-right: 4px;
+}
+
+.separador {
+    height: 70%;
+    background-color: var(--color-secundario);
+    opacity: 0.6;
+    width: 1px;
+    margin: 0 10px;
+}
+
+.svg_icon {
+    height: 100%;
+    width: auto;
+    fill: var(--color-detalles); /*esto en realidad no esta haciendo nada, solo afecta a las svg armadas con <svg> <path /> </svg>*/
+    stroke: none;
+}
+
+.header_logo {
+    height: 90%;
+    width: auto;
+}
+
+.header_button {
+    font-size: 17px;
+    margin: 0 8px;
+}
+
+.hover_opcacity_change:hover{
+    opacity: 0.8;
+}
+
+.header_stick_anim {
+    position: fixed;
+    top: calc(-1*var(--tamaño-header));
+    left: 0;
+}
+
+.header_stick_anim_finish_text {
+    top: 0;
+}
+
+.big {
+    height: 2000px;
+    width: 5px;
+    background-color: #000000;
+    margin-left: 20px;
+}
+
+.slim_header {
+    height: 60px;
+    font-size: 8px;
+}
+
+
+.slim_header .header_button{
+    font-size: 15px;
+    transition: font-size 0.5s ease;
+}
+
+.std_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.std_container > div {
+    box-sizing: border-box;
+
+    width: var(--std-width);
+    height: 100%;
+}
+
+.banner {
+    height: 650px;
+
+    background-image: url('../imgs/banner.png');
+    background-size: auto 100%;
+    background-position: center center;
+
+}
+
+.banner > div {
+    padding: 80px 80px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo_banner {
+    display: inline-block;
+    font-weight: bolder;
+    font-size: 60px;
+    line-height: 1.2ch;
+
+    margin-bottom: 30px;
+}
+
+.boton_banner {
+    width: fit-content;
+    font-size: 30px;
+    background-color: var(--color-destacado);
+    border-radius: 20px;
+    padding: 15px 20px;
+    transition: background-color 1s ease;
+}
+
+.boton_banner:hover{
+    background-color: #fec21e;
+}
+
+.presentacion_productos {
+    height: fit-content;
+}
+
+.presentacion_productos > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+
+.pr_pr_titulo {
+    font-weight: bolder;
+    font-size: 50px;
+    color:var(--color-principal);
+    margin: 60px 0;
+}
+
+.grilla_productos {
+    box-sizing: border-box;
+    width:100%;
+    height:fit-content;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0 100px
+}
+.grilla_productos>a {
+    box-sizing: border-box;
+    width:33%;
+    padding:20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/*imagen producto*/
+.grilla_productos>a>img{
+    aspect-ratio: 9/8;
+    width: 100%;
+    border-radius: 5%;
+}
+/*nombre producto*/
+.grilla_productos>a>span{
+    font-weight: 700;
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+@media (max-width: 1080px) {
+    /*
+        estilos especificos de celular
+    */
+    .pc_only {
+        display: none;
+    }
+    .banner > div {
+        padding: 35px;
+    }
+    .titulo_banner {
+        font-size: 45px;
+    }
+
+}
+
+@media (min-width: 1081px) {
+    /*
+        estilos especificos de pc
+    */
+    .mobile_only {
+        display: none;
+    }
+}
