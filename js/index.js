@@ -27,7 +27,7 @@ function cargar_categorias_en_index(productos){
         categoria = productos[id];
 
         a = document.createElement('a');
-        a.href='#'; // despues le implementaria la url dependiendo del producto
+        a.href=`./categoria.html?cat_id=${id}`; // despues le implementaria la url dependiendo del producto
 
         img = document.createElement('img');
 
