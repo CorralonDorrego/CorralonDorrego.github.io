@@ -49,19 +49,14 @@ document.addEventListener('DOMContentLoaded', async ()=>{
                     producto_precio.textContent = `${prod.moneda}${prod.valor} / ${prod.unidad}`;
                     unidad_para_anadir.textContent = prod.unidad;
 
-                    let cantidad_local_storage = localStorage.getItem(`${cat_id}-${prod_id}-c`);
+                    let cantidad_carrito = carrito_get_producto(cat_id, prod_id);
 
-                    boton_anadir.value = `AÑADIR${(cantidad_local_storage && cantidad_local_storage>0)?` [${cantidad_local_storage}]`:''}`;
+                    boton_anadir.value = `AÑADIR${(cantidad_carrito && cantidad_carrito>0)?` [${cantidad_carrito}]`:''}`;
 
                     boton_anadir.addEventListener('click', () => {
-
-                        //proceso añadir al carrito (w.i.p.)
-                        let c_actual = localStorage.getItem(`${cat_id}-${prod_id}-c`) ;
-                        let c_nueva = Number(c_actual)+Number(cantidad_anadir.value)
-                        if(c_nueva<0)
-                            c_nueva=0;
-                        localStorage.setItem(`${cat_id}-${prod_id}-c`, c_nueva);
-
+                        add_carrito(cat_id, prod_id, Number(cantidad_anadir.value), (cantidad_nueva) => {
+                            boton_anadir.value = `AÑADIR${(cantidad_nueva && cantidad_nueva>0)?` [${cantidad_nueva}]`:''}`;
+                        });
                     })
 
                     descripcion_prod.textContent = prod.descripcion;
@@ -96,8 +91,3 @@ document.addEventListener('DOMContentLoaded', async ()=>{
         }
 });
 
-
-/**
- * array to string : JSON.stringify(array)
- * string to array : JSON.parse(str)
- */

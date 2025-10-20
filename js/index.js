@@ -3,7 +3,6 @@ console.log("index js cargado");
 
 
 
-// <!0> hacer una funcion init_index que consiga toda la informacion de firebase y cargue todas la secciones
 // <!1> tener en la db 2 "carpetas" data y test-data, cuando el admin quiere añadir un producto o hacer cosas asi, lo hace en test-dat¿a y despues "commitea" y se transfiere todo a data
 
 
