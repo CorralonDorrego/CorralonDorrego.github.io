@@ -25,8 +25,7 @@ function add_carrito(cat_id, prod_id, ammount, cb)
         new_val = prev_val + ammount;
 
     if(new_val<=0)
-        new_val=0;
-    //  remove_carrito(cat_id, prod_id);
+        remove_carrito(cat_id, prod_id);
 
     localStorage.setItem(`${cat_id}-${prod_id}`, new_val);
 
@@ -37,8 +36,6 @@ function add_carrito(cat_id, prod_id, ammount, cb)
         prodarray.push(`${cat_id}-${prod_id}`);
 
     save_prodarray(prodarray);
-    if(new_val<=0)
-        vaciar_carrito();
 
     if(cb)//callback
         cb(new_val);

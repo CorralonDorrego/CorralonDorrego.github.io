@@ -34,6 +34,14 @@ async function esperar_fb_data(){
 document.addEventListener('DOMContentLoaded', async ()=>{
     header = document.querySelector('header');
     const root = document.documentElement;
+    const sp = document.querySelector('#side_pannel');
+    const sp_button = document.querySelector('.button_side_pannel');
+    const sp_c_button = document.querySelector('.button_close_side_pannel');
+    const fader = document.querySelector('#fader');
+
+
+
+
     document.addEventListener('scroll', e => {
         if(window.scrollY>70&&header_state==0){
             header_state=1;
@@ -48,6 +56,21 @@ document.addEventListener('DOMContentLoaded', async ()=>{
 
     })
 
+    sp_button.addEventListener('click', e => {
+        sp.classList.add('sp_visible');
+        fader.style.opacity=1;
+    })
+    sp.querySelectorAll('a').forEach(elem => {
+        elem.addEventListener('click', e => {
+            sp.classList.remove('sp_visible');
+            fader.style.opacity=0;
+        })
+    })
+    sp_c_button.addEventListener('click', e => {
+        sp.classList.remove('sp_visible');
+        fader.style.opacity=0;
+    })
+    
     fb_data = await get_firebase('data');
 
     cargar_logo(fb_data.logo);

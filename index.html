@@ -12,12 +12,28 @@
         <script src="./js/utils.js"></script>
         <script src="./js/std_f_carga.js"></script>
         <script src="./js/std_init.js"></script>
+        <script src="./js/carrito.js"></script>
         <script src="./js/index.js"></script>
     </head>
     <body>
         <div class="loading_display">
             <img src="./imgs/loading.gif" alt="loading..."/>
         </div>
+        <div id="side_pannel" class="mobile_only">
+            <div>
+                <img src="./imgs/menu_close.svg" class="button_close_side_pannel clickable"/>
+            </div>
+            <span class="separador-h"></span>
+            <a href="./index.html" class="header_button hover_opcacity_change">Inicio</a>
+            <span class="separador-h"></span>
+            <a href="./index.html#nuestros_productos" class="header_button hover_opcacity_change">Productos</a>
+            <span class="separador-h"></span>
+            <a href="./index.html#contacto" class="header_button hover_opcacity_change">Contacto</a>
+            <span class="separador-h"></span>
+            <a href="./index.html#nosotros" class="header_button hover_opcacity_change">Nosotros</a>
+            <span class="separador-h"></span>
+        </div>
+        <div id="fader" class="mobile_only"></div>
         <div class="sub_header pc_only">
             <div>
                 <div class="sub_header_section">
@@ -52,7 +68,7 @@
         </div>
         <header class="header">
             <div>
-                <img src="./imgs/menu.svg" class="button_side_pannel mobile_only"/>
+                <img src="./imgs/menu.svg" class="button_side_pannel mobile_only clickable"/>
                 <div class="header_section">
                     <img src="" class="header_logo logo_img"/>
                     <!--js-->
@@ -72,8 +88,7 @@
         <div id="banner-main" class="std_container banner">
             <div>
                 <span class="titulo_banner">Todo lo que tu obra <br>necesita, cerca tuyo.</span>
-                <a href="#" class="boton_banner pc_only">Cotizá ahora por WhatsApp</a>
-                <a href="#" class="boton_banner mobile_only">WhatsApp</a>
+                <a href="#" class="boton_banner">Cotizá ahora por WhatsApp</a>
             </div>
         </div>
         <div id="nuestros_productos"class="std_container presentacion_productos">

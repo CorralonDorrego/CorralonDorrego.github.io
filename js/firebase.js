@@ -30,7 +30,6 @@ function get_firebase(url){
             var fetchedData = database.ref(url);
 
             fetchedData.on('value', (snapshot) => {
-
                 var data = snapshot.val()
                 
                 resolve(data);
