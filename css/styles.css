@@ -352,7 +352,7 @@ body {
 
 .loading_display{
     z-index: 10000000;
-    position:absolute;
+    position:fixed;
     width: 100%;
     height: 100%;
     background-color: #cfcfcfe1;
@@ -447,28 +447,6 @@ body {
     margin-left: 10px;
     font-size: 20px;
 }
-#cantidad_prod{
-    align-items: center;
-    margin-left: 10px;
-}
-#cantidad_prod>input[type='text']{
-    text-align: right;
-    width:5ch;
-    color: var(--color-principal);
-    background-color: #e2e2e2;
-    border: none;
-}
-
-#cantidad_prod>input[type='button']{
-    margin-left:10px;
-    padding: 7px;
-    background-color: var(--color-destacado);
-    color: var(--color-detalles);
-    font-weight: bold;
-    border-radius: 5px;
-    border:none;
-    box-shadow: none;
-}
 
 #more_info_prod {
     margin-top: 40px;
@@ -492,6 +470,9 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 10px;
+    flex-grow: 1 ;
 }
 
 .grilla_productos>a{
@@ -539,11 +520,20 @@ body {
 
 .lista_categorias>div{
     padding: 5px;
+    padding-left: 0;
     display: flex;
     flex-direction: column;
 }
 .lista_categorias>div>*{
-    margin: 5px 0;
+    padding-left: 5px;
+}
+.lista_categorias>div>.separador-h{
+    margin: 1px 0;
+}
+.lista_categorias>div>.clickable{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-sizing: border-box;
 }
 
 .clickable{ /*hace que el mouse cambie al estado "puedo clickear" (la manito)*/
@@ -551,6 +541,93 @@ body {
 }
 .bold{
     font-weight: bold;
+}
+.titulo{
+    font-size: 30px;
+    margin: 40px 20px; 
+    font-weight: bold;
+    color: var(--color-detalles);
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--color-destacado);
+    width: fit-content;
+}
+.ammount_selector{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--color-secundario);
+    border: 2px solid var(--color-destacado);
+    border-radius: 5px;
+    height: 30px;
+    padding: 5px;
+    
+    width: fit-content;
+}
+.ammount_selector>img{
+    height: 90%;
+    aspect-ratio: 1;
+}
+.ammount_selector>span{
+    margin-right: 10px;
+}
+.ammount_selector>input{
+    background-color: inherit;
+    border:none;
+    width: 40px;
+    text-align: center;
+    font-size: inherit;
+    text-align: end;
+}
+.prod_carrito{
+    box-sizing: border-box;
+    width: 100%;
+    height: fit-content;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: var(--color-destacado);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.prod_carrito>div{
+    display: flex;
+    flex-direction: row;
+    
+}
+.prod_carrito>div>.img_cutter{
+    height: 72px;
+    width: 72px;
+    border: 5px solid var(--color-secundario)
+}
+.prod_carrito>div>*{
+    margin-right: 20px;
+}
+.nombre_prod{
+    font-size: 25px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: fit-content;
+    max-width: 40ch;
+}
+.display_none{
+    display: none !important;
+}
+.precio{
+    padding: 7px 10px;
+    background-color: var(--color-secundario);
+    border-radius: 10px;
+    border: 5px double #000000;
+    height: fit-content;
+    font-size: 20px;
+}
+.prod_carrito>div>.ammount_selector{
+    height: 40px;
+    border: 5px solid var(--color-secundario);
+    border-radius: 10px;
 }
 
 @media (max-width: 1080px) {
@@ -616,14 +693,14 @@ body {
         font-size: 60px;
     }
     .lista_categorias{
-        width: 40%;
+        width: fit-content;
         font-size: 30px;
     }
     .lista_categorias>span{
         font-size: 40px;
     }
     .grilla_productos>a{
-        width:50%;
+        width:270px;
     }
     .grilla_productos>a>span{
         font-size: 25px;
@@ -650,17 +727,26 @@ body {
     .producto_precio{
         font-size: 30px;
     }
-    #cantidad_prod{
+    .ammount_selector{
+        border: 5px solid var(--color-destacado);
+        height:80px;
         font-size: 30px;
     }
-    #cantidad_prod>input{
-        font-size: inherit;
+    .ammount_selector>input{
+        width: 60px;
     }
-    #cantidad_prod>input[type="text"] {
-        margin-right: 5px
+    #descripcion_prod {
+        font-size: 30px;
     }
-    #cantidad_prod>input[type="button"] {
-        padding: 10px
+    .titulo {
+        font-size: 50px;
+    }
+    .prod_carrito .ammount_selector{
+        height: 40px;
+        font-size: 25px;
+    }
+    .prod_carrito .ammount_selector input {
+        width: 50px;
     }
 }
 

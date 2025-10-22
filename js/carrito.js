@@ -7,6 +7,14 @@ function get_prodarray()
         return [];
 }
 
+function lsid_to_cid_pid(lsid)
+{
+    return {
+        cat_id : `c_${lsid[2]}`,
+        prod_id : `p_${lsid[6]}`
+    }
+}
+
 function save_prodarray(array)
 {
     localStorage.setItem('prodarray', JSON.stringify(array));
@@ -24,21 +32,27 @@ function add_carrito(cat_id, prod_id, ammount, cb)
     else
         new_val = prev_val + ammount;
 
-    if(new_val<=0)
+    if(new_val<=0){
         remove_carrito(cat_id, prod_id);
+        if(cb)//callback
+            cb(0);
+    }
+    else
+    {
+        localStorage.setItem(`${cat_id}-${prod_id}`, new_val);
 
-    localStorage.setItem(`${cat_id}-${prod_id}`, new_val);
+
+        const index_prod = prodarray.indexOf(`${cat_id}-${prod_id}`);
+        if(index_prod==-1)
+            prodarray.push(`${cat_id}-${prod_id}`);
 
 
+        save_prodarray(prodarray);
 
-    const index_prod = prodarray.indexOf(`${cat_id}-${prod_id}`);
-    if(index_prod==-1)
-        prodarray.push(`${cat_id}-${prod_id}`);
 
-    save_prodarray(prodarray);
-
-    if(cb)//callback
-        cb(new_val);
+        if(cb)//callback
+            cb(new_val);
+    }
 }
 
 function carrito_get_producto(cat_id, prod_id)
@@ -70,6 +84,31 @@ function vaciar_carrito()
     }
     
     save_prodarray([]);
+}
+
+function set_carrito(cat_id, prod_id, ammount, cb)
+{
+    let prodarray = get_prodarray();
+
+    if(ammount<0)
+    {
+        remove_carrito(cat_id, prod_id);
+        if(cb)//callback
+            cb(0);
+    }
+    else
+    {
+        localStorage.setItem(`${cat_id}-${prod_id}`, ammount);
+
+        const index_prod = prodarray.indexOf(`${cat_id}-${prod_id}`);
+
+        if(index_prod==-1)
+            prodarray.push(`${cat_id}-${prod_id}`);
+
+        save_prodarray(prodarray);
+        if(cb)//callback
+            cb(ammount);
+    }
 }
 
 

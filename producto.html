@@ -67,17 +67,17 @@
         </div>
         <header class="header">
             <div>
-                <img src="./imgs/menu.svg" class="button_side_pannel mobile_only clickable"/>
-                <div class="header_section">
+                <img src="./imgs/menu.svg" class="button_side_pannel clickable"/>
+                <a href="./index.html" class="header_section">
                     <img src="" class="header_logo logo_img"/>
                     <!--js-->
-                </div>
+                </a>
                 <div class="header_section">
                     <a href="./index.html" class="header_button hover_opcacity_change pc_only">Inicio</a>
                     <a href="./index.html#nuestros_productos" class="header_button hover_opcacity_change pc_only">Productos</a>
                     <a href="./index.html#contacto" class="header_button hover_opcacity_change pc_only">Contacto</a>
                     <a href="./index.html#nosotros" class="header_button hover_opcacity_change pc_only">Nosotros</a>
-                    <a href="#" class="cotizar_header_button">Cotizar</a>
+                    <a href="./cotizar.html" class="cotizar_header_button">Cotizar</a>
                 </div>
             </div>
         </header>
@@ -99,12 +99,12 @@
                         <span class="prod_intro_subtitulo">PRECIO</span>
                         <span class="producto_precio"></span>
                         <span class="prod_intro_subtitulo">AÑADA AL CARRITO</span>
-                        <div id="cantidad_prod" class="std_same_line">
-                            <input type="text" value="0"/>
+                        <div id="cantidad_prod" class="ammount_selector">
+                            <img id="minus" src="./imgs/minus.svg" class="clickable"/>
+                            <input type="text"/>
                             <span></span>
-                            <input type="button" value="" class="hover_opcacity_change"/>
+                            <img id="plus" src="./imgs/plus.svg" class="clickable"/>
                         </div>
-
                     </div>
                 </div>
                 <div id="more_info_prod">

@@ -33,9 +33,6 @@ document.addEventListener('DOMContentLoaded', async ()=>{
                     const href_nombre_cat = document.querySelector('#cat_nom_redirect');
                     const producto_nombre = document.querySelector('.producto_nom_prod');
                     const producto_precio = document.querySelector('.producto_precio');
-                    const unidad_para_anadir = document.querySelector('#cantidad_prod>span');
-                    const cantidad_anadir = document.querySelector('#cantidad_prod>input[type="text"]');
-                    const boton_anadir = document.querySelector('#cantidad_prod>input[type="button"]');
                     const descripcion_prod = document.querySelector('#descripcion_prod');
                     const mas_prods_cat = document.querySelector('#mas_prods_cat');
                     const mas_prods_div = document.querySelector('.grilla_productos');
@@ -47,17 +44,8 @@ document.addEventListener('DOMContentLoaded', async ()=>{
                     
                     producto_nombre.textContent = prod.nombre;
                     producto_precio.textContent = `${prod.moneda}${prod.valor} / ${prod.unidad}`;
-                    unidad_para_anadir.textContent = prod.unidad;
 
-                    let cantidad_carrito = carrito_get_producto(cat_id, prod_id);
-
-                    boton_anadir.value = `AÑADIR${(cantidad_carrito && cantidad_carrito>0)?` [${cantidad_carrito}]`:''}`;
-
-                    boton_anadir.addEventListener('click', () => {
-                        add_carrito(cat_id, prod_id, Number(cantidad_anadir.value), (cantidad_nueva) => {
-                            boton_anadir.value = `AÑADIR${(cantidad_nueva && cantidad_nueva>0)?` [${cantidad_nueva}]`:''}`;
-                        });
-                    })
+                    setup_ammount_selector('cantidad_prod', cat_id, prod_id, prod.unidad);
 
                     descripcion_prod.textContent = prod.descripcion;
                     mas_prods_cat.textContent = `MAS EN ${cat.nombre.toLocaleUpperCase()}`;

@@ -66,17 +66,19 @@
         </div>
         <header class="header">
             <div>
-                <img src="./imgs/menu.svg" class="button_side_pannel mobile_only clickable"/>
-                <div class="header_section">
+                
+                <img src="./imgs/menu.svg" class="button_side_pannel clickable"/>
+                
+                <a href="./index.html" class="header_section">
                     <img src="" class="header_logo logo_img"/>
                     <!--js-->
-                </div>
+                </a>
                 <div class="header_section">
                     <a href="./index.html" class="header_button hover_opcacity_change pc_only">Inicio</a>
                     <a href="./index.html#nuestros_productos" class="header_button hover_opcacity_change pc_only">Productos</a>
                     <a href="./index.html#contacto" class="header_button hover_opcacity_change pc_only">Contacto</a>
                     <a href="./index.html#nosotros" class="header_button hover_opcacity_change pc_only">Nosotros</a>
-                    <a href="#" class="cotizar_header_button">Cotizar</a>
+                    <a href="./cotizar.html" class="cotizar_header_button">Cotizar</a>
                 </div>
             </div>
         </header>
@@ -85,7 +87,27 @@
         <!--especifico de cotizar.html-->
         <div class="std_container">
             <div>
-                
+                <span class="titulo">Carrito de materiales</span>
+                <span class="separador-h"></span>
+                <div id="lista_carrito">
+                    <div id="prod_carrito_template" class="prod_carrito display_none"> <!--ej prod para compy paste-->
+                        <div>
+                            <div class="img_cutter">
+                                <img src="#"/>
+                            </div>
+                            <span class="nombre_prod"></span>
+                            <div class="ammount_selector">
+                                <img id="minus" src="./imgs/minus.svg" class="clickable"/>
+                                <input type="text"/>
+                                <span></span>
+                                <img id="plus" src="./imgs/plus.svg" class="clickable"/>
+                            </div>
+                        </div>
+                        <span class="precio">
+                            
+                        </span>
+                    </div>
+                </div>
             </div>
         </div>
 

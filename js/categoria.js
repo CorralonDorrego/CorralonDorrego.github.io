@@ -29,17 +29,22 @@ document.addEventListener('DOMContentLoaded', async ()=>{
         span.className='hover_opcacity_change clickable';
         span.id=aux_cat_id;
 
-        if(selected_cat_id == aux_cat_id) //  generarlo seleccionado
+        if(selected_cat_id == aux_cat_id){ //  generarlo seleccionado
             span.classList.add('bold')
+            span.style.backgroundColor="#d8d8d8";
+        }
 
 
         span.addEventListener('click', (e) => {
             if(aux_cat_id!=selected_cat_id)
             {
                 const selected_cat_bttn = document.querySelector(`#${selected_cat_id}`);
-                if(selected_cat_bttn)
+                if(selected_cat_bttn){
                     selected_cat_bttn.classList.remove('bold');
+                    selected_cat_bttn.style.backgroundColor='#00000000';
+                }
                 span.classList.add('bold')
+                span.style.backgroundColor="#d8d8d8";
                 selected_cat_id=aux_cat_id;
                 cat=fb_data.productos[selected_cat_id];
                 path_name_display.textContent = cat.nombre.toLocaleUpperCase();
