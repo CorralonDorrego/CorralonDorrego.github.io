@@ -4,6 +4,9 @@ document.addEventListener('DOMContentLoaded', async ()=>{
     
     const prod_list = document.querySelector('#lista_carrito');
     const template = prod_list.querySelector('#prod_carrito_template');
+    const no_products = document.querySelector('#no_hay_productos');
+    const completar_compra = document.querySelector('#completar_compra');
+    const total_container = document.querySelector('.total_container');
 
     const prodarray = get_prodarray();
     console.log(prodarray);
@@ -33,6 +36,12 @@ document.addEventListener('DOMContentLoaded', async ()=>{
 
         prod_list.appendChild(prod_front);
     })
+    if(prodarray.length==0)
+    {
+        no_products.style.display = 'flex';
+        completar_compra.style.display = 'none';
+        total_container.style.display = 'none';
+    }
 
     actualizar_precios();
     
@@ -60,6 +69,15 @@ function actualizar_precios(){
         total_precios.appendChild(precio);
         i++; 
     }
+    if(i==0){
+        const precio = document.createElement('span');
+        precio.className = 'precio';
+        precio.textContent = `$ 0`;
+
+        
+        total_precios.appendChild(precio);
+    }
+
 }
 
 function calcular_costo_total(){
