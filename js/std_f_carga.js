@@ -14,7 +14,12 @@ function cargar_info_contacto(contacto){
         elem.href=`https://maps.google.com/?q=${contacto.direccion.calle} ${contacto.direccion.altura}, ${contacto.direccion.ciudad}`;
     })
     document.querySelectorAll(".contacto_email").forEach(elem => {
-        
+        elem.href = `mailto:${fb_data.contacto.email}`;
+        if(elem.textContent.trim()!='CONTACTAR'){
+            const text = document.createElement('span')
+            text.textContent = fb_data.contacto.email;
+            elem.appendChild(text);
+        }
     })
     document.querySelectorAll(".contacto_numero").forEach(elem => {
         elem.append(`+${contacto.celular.area} ${contacto.celular.numero}`);

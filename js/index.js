@@ -13,6 +13,7 @@ console.log("index js cargado");
 
 function cargar_categorias_en_index(productos){
     const container = document.querySelector('.grilla_categorias');
+    const nosotros = document.querySelector('.presentacion_nosotros');
     let a;
     let img;
     let nom;
@@ -20,7 +21,6 @@ function cargar_categorias_en_index(productos){
     let categoria;
     let prod_ids;
 
-    // test vv
     let div;
     for(const id in productos)
     {
@@ -58,6 +58,8 @@ function cargar_categorias_en_index(productos){
         a.appendChild(div);
         container.appendChild(a);
     }
+    
+    nosotros.innerHTML = fb_data.presentacion;
 }
 
 function cargar_banner_en_index(banner){

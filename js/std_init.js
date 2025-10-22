@@ -6,6 +6,9 @@ function finish_load(){
     const loading = document.querySelector(".loading_display");
     loading.style.opacity=0;
     loading.style.pointerEvents='none';
+    
+    if(window.location.hash)
+        window.location.href = window.location.href;
 }
 
 function load_error(msg){

@@ -2,6 +2,7 @@ html {
     --color-principal : #3c7bef;
     --color-secundario: #ffffff;
     --color-detalles: #000000;
+    --color-footer: #414141;
     --color-destacado: #f4b761;
     --tamaño-header-normal: 97px;
     --tamaño-slim-header: 60px;
@@ -30,6 +31,7 @@ body {
     background-color: var(--color-secundario);
     padding: 0;
     margin: 0;
+    min-height: 100vh;
 }
 
 #fader{
@@ -278,6 +280,7 @@ body {
 
 .presentacion_productos {
     height: fit-content;
+    margin-bottom: 50px;
 }
 
 .presentacion_productos > div {
@@ -690,6 +693,60 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 20px;
+}
+.presentacion_nosotros{
+    white-space: pre-line;
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+}
+#nosotros{
+    padding-bottom: 610px;
+}
+#contacto .logo_img {
+    height: 100px;
+    width: auto;
+    object-fit: contain;
+}
+
+footer {
+    position: absolute;
+    top:100%;
+    transform: translateY(-100%);
+    height: 310px;
+    width: 100%;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--color-footer);
+}
+footer>div{
+    display: flex;
+    flex-direction: row !important;
+}
+footer>div>div {
+    color: var(--color-secundario);
+    box-sizing: border-box;
+    width: 50%;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+}
+footer>div>div>* {
+    color: inherit
+}
+footer>div>div>a {
+    font-size: 17px;
+    height: 25px;
+    margin: 5px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+footer>div>div>a>img {
+    margin-right: 5px;
 }
 
 @media (max-width: 1080px) {
