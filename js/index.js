@@ -15,7 +15,8 @@ function cargar_categorias_en_index(productos){
     const container = document.querySelector('.grilla_categorias');
     let a;
     let img;
-    let span;
+    let nom;
+    let n_cat;
     let categoria;
     let prod_ids;
 
@@ -42,11 +43,16 @@ function cargar_categorias_en_index(productos){
         
         div = document.createElement('div');
 
-        span = document.createElement('span');
-        span.className = 'nombre_categoria';
-        span.textContent = categoria.nombre;
+        nom = document.createElement('span');
+        nom.className = 'nombre_categoria';
+        nom.textContent = categoria.nombre;
 
-        div.appendChild(span);
+        n_cat = document.createElement('span');
+        n_cat.className = 'n_cat';
+        n_cat.textContent = `${prod_ids.length} productos`;
+
+        div.appendChild(nom);
+        div.appendChild(n_cat);
 
         a.appendChild(img);
         a.appendChild(div);

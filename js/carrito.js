@@ -9,9 +9,10 @@ function get_prodarray()
 
 function lsid_to_cid_pid(lsid)
 {
+    const match = lsid.match(/c_(\d+)-p_(\d+)/);
     return {
-        cat_id : `c_${lsid[2]}`,
-        prod_id : `p_${lsid[6]}`
+        cat_id: `c_${match[1]}`,
+        prod_id: `p_${match[2]}`,
     }
 }
 

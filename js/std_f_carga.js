@@ -29,19 +29,20 @@ function cargar_info_contacto(contacto){
     
 }
 
-function setup_ammount_selector(tag_id, cat_id, prod_id, unidad)
+function setup_ammount_selector(tag, cat_id, prod_id, unidad, cb)
 {
-    const div = document.querySelector(`#${tag_id}`);
-    const minus = div.querySelector('#minus');
-    const text = div.querySelector('input');
-    const sp_unidad = div.querySelector('span');
-    const plus = div.querySelector('#plus');
+    const minus = tag.querySelector('#minus');
+    const text = tag.querySelector('input');
+    const sp_unidad = tag.querySelector('span');
+    const plus = tag.querySelector('#plus');
 
     text.value = carrito_get_producto(cat_id, prod_id);
     sp_unidad.textContent = unidad;
     minus.addEventListener('click', e=>{
         add_carrito(cat_id, prod_id, -1, n => {
             text.value=n;
+            if(cb)
+                cb(n);
         })
     })
     text.addEventListener('input', e=>{
@@ -50,11 +51,15 @@ function setup_ammount_selector(tag_id, cat_id, prod_id, unidad)
             value=0;
         set_carrito(cat_id, prod_id, value, n => {
             text.value=n;
+            if(cb)
+                cb(n);
         })
     })
     plus.addEventListener('click', e=>{
         add_carrito(cat_id, prod_id, 1, n => {
             text.value=n;
+            if(cb)
+                cb(n);
         })
     })
 }

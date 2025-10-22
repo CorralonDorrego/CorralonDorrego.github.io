@@ -67,7 +67,7 @@
         <header class="header">
             <div>
                 
-                <img src="./imgs/menu.svg" class="button_side_pannel clickable"/>
+                <img src="./imgs/menu.svg" class="button_side_pannel clickable mobile_only"/>
                 
                 <a href="./index.html" class="header_section">
                     <img src="" class="header_logo logo_img"/>
@@ -87,11 +87,14 @@
         <!--especifico de cotizar.html-->
         <div class="std_container">
             <div>
-                <span class="titulo">Carrito de materiales</span>
+                <div class="carrito_top_section">
+                    <span class="titulo">Carrito de materiales</span>
+                    <span id="completar_compra" class="hover_opcacity_change clickable">Concretar compra por WhatsApp</span>
+                </div>
                 <span class="separador-h"></span>
                 <div id="lista_carrito">
                     <div id="prod_carrito_template" class="prod_carrito display_none"> <!--ej prod para compy paste-->
-                        <div>
+                        <div class="prod_info">
                             <div class="img_cutter">
                                 <img src="#"/>
                             </div>
@@ -103,9 +106,20 @@
                                 <img id="plus" src="./imgs/plus.svg" class="clickable"/>
                             </div>
                         </div>
-                        <span class="precio">
-                            
-                        </span>
+                        <div class="prod_precio_container">
+                            <span class="precio"></span>
+                            <span class="producto_precio"></span>
+                        </div>
+                    </div>
+                </div>
+                <span class="separador-h"></span>
+                <div class="total_container">
+                    <span>TOTAL ESTIMADO:</span>
+                    <div>
+                        <!--
+                        <span class="precio">$ 100</span>
+                        <span>+</span>
+                        <span class="precio">$ 100</span>-->
                     </div>
                 </div>
             </div>

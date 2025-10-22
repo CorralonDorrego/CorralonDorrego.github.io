@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', async ()=>{
                     const descripcion_prod = document.querySelector('#descripcion_prod');
                     const mas_prods_cat = document.querySelector('#mas_prods_cat');
                     const mas_prods_div = document.querySelector('.grilla_productos');
+                    const cantidad_prod = document.querySelector('#cantidad_prod');
 
                     img_prod.src = prod.img_url;
 
@@ -45,7 +46,7 @@ document.addEventListener('DOMContentLoaded', async ()=>{
                     producto_nombre.textContent = prod.nombre;
                     producto_precio.textContent = `${prod.moneda}${prod.valor} / ${prod.unidad}`;
 
-                    setup_ammount_selector('cantidad_prod', cat_id, prod_id, prod.unidad);
+                    setup_ammount_selector(cantidad_prod, cat_id, prod_id, prod.unidad);
 
                     descripcion_prod.textContent = prod.descripcion;
                     mas_prods_cat.textContent = `MAS EN ${cat.nombre.toLocaleUpperCase()}`;

@@ -8,7 +8,7 @@ html {
     --tamaño-header: 97px;
     --std-width: 1080px;
 
-    font-family: "Montserrat";
+    font-family: Helvetica;
     scroll-behavior: smooth;
 }
 
@@ -327,27 +327,32 @@ body {
     flex-direction: column;
     position:absolute;
     color: var(--color-detalles);
-    top: 55%;
+    top: 65%;
     left: 50%;
-    height:20%;
+    height:30%;
     width:100%;
-    background-color: #ffffffc2;
-    transform: translateX(-50%);
-    transition: background-color 0.2s ease-in-out;
+    background-color: color-mix(in srgb, var(--color-secundario), transparent 50%);
+    color: var(--color-detalles);
+    transform: translate(-50%, -50%);
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 .grilla_categorias>a:hover>div {
-    background-color: color-mix(in srgb, var(--color-destacado), transparent 30%);
+    background-color: color-mix(in srgb, var(--color-principal), transparent 20%);
+    color: var(--color-secundario);
     z-index: 1000;
 }
-.grilla_categorias>a>span{
+.grilla_categorias>a>div>.nombre_categoria{
     font-weight: 700;
-    font-size: 30px;
-    margin-top: 10px;
+    font-size: 20px;
+    color: inherit;
+}
+.grilla_categorias>a>div>.n_cat{
+    font-size: 15px;
+    color: inherit;
 }
 .nombre_categoria{
     color: var(--color-detalles);
     font-weight: bold;
-    font-size: large;
 }
 
 .loading_display{
@@ -542,14 +547,31 @@ body {
 .bold{
     font-weight: bold;
 }
+.carrito_top_section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 40px 20px; 
+}
 .titulo{
     font-size: 30px;
-    margin: 40px 20px; 
     font-weight: bold;
     color: var(--color-detalles);
     padding: 10px;
     border-radius: 10px;
     background-color: var(--color-destacado);
+    width: fit-content;
+    margin-right: 20px;
+}
+#completar_compra{
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--color-detalles);
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--color-destacado);
+    border: 2px dotted var(--color-detalles);
     width: fit-content;
 }
 .ammount_selector{
@@ -585,25 +607,38 @@ body {
     width: 100%;
     height: fit-content;
     padding: 20px;
-    border-radius: 20px;
+    border-radius: 10px;
+    margin: 10px 0;
     background-color: var(--color-destacado);
 
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
-.prod_carrito>div{
+.prod_carrito>.prod_info{
     display: flex;
     flex-direction: row;
     
 }
-.prod_carrito>div>.img_cutter{
+.prod_carrito>.prod_info>.img_cutter{
     height: 72px;
     width: 72px;
-    border: 5px solid var(--color-secundario)
+    border: 5px solid var(--color-secundario);
+    background-color: var(--color-secundario);
 }
-.prod_carrito>div>*{
+.prod_carrito>.prod_info>*{
     margin-right: 20px;
+}
+.prod_carrito>.prod_precio_container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.prod_carrito>.prod_precio_container>.producto_precio {
+    margin-left: 0;
+    margin-top: 10px;
 }
 .nombre_prod{
     font-size: 25px;
@@ -623,11 +658,27 @@ body {
     border: 5px double #000000;
     height: fit-content;
     font-size: 20px;
+    white-space: nowrap;
 }
 .prod_carrito>div>.ammount_selector{
     height: 40px;
     border: 5px solid var(--color-secundario);
     border-radius: 10px;
+}
+.total_container{
+    height: 40px;
+    width: fit-content;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--color-destacado);
+    border-radius: 10px;
+}
+.total_container>span {
+    color: var(--color-secundario);
+    margin-right: 15px;
+    font-weight: bold;
 }
 
 @media (max-width: 1080px) {
@@ -741,12 +792,33 @@ body {
     .titulo {
         font-size: 50px;
     }
+    #completar_compra{
+        font-size: 50px;
+        border: 5px dotted var(--color-detalles);
+    }
     .prod_carrito .ammount_selector{
         height: 40px;
         font-size: 25px;
     }
     .prod_carrito .ammount_selector input {
         width: 50px;
+    }
+
+    .nombre_categoria {
+        font-size: 35px !important;
+    }
+    .n_cat {
+        display: none;
+    }
+    .grilla_categorias>a>div{
+        background-color: color-mix(in srgb, var(--color-secundario), transparent 20%);
+    }
+    .total_container{
+        font-size: 30px;
+        height: 50px;
+    }
+    .total_container .precio{
+        font-size: 30px;
     }
 }
 
