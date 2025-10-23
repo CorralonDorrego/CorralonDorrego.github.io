@@ -703,8 +703,9 @@ body {
 #nosotros{
     padding-bottom: 610px;
 }
-#contacto .logo_img {
-    height: 100px;
+#contacto .logo_oscuro_img {
+    margin-top: 20px;
+    height: 80px;
     width: auto;
     object-fit: contain;
 }
@@ -729,7 +730,7 @@ footer>div>div {
     color: var(--color-secundario);
     box-sizing: border-box;
     width: 50%;
-    padding: 0 15px;
+    padding: 0 10px;
     display: flex;
     flex-direction: column;
     font-size: 20px;

@@ -76,6 +76,6 @@ document.addEventListener('DOMContentLoaded', async ()=>{
     
     fb_data = await get_firebase('data');
 
-    cargar_logo(fb_data.logo);
+    cargar_logo();
     cargar_info_contacto(fb_data.contacto);
 })

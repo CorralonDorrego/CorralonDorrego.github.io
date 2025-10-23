@@ -1,10 +1,16 @@
-function cargar_logo(logo)
+function cargar_logo()
 {
     document.querySelectorAll('.logo_img').forEach(elem => {
         if(elem.tagName=='IMG')
-            elem.src=logo.img_url;
+            elem.src=fb_data.logo.img_url;
         else
             elem.style.backgroundImage=`url(${logo.img_url})`;
+    })
+    document.querySelectorAll('.logo_oscuro_img').forEach(elem => {
+        if(elem.tagName=='IMG')
+            elem.src=fb_data.logo_fondo_oscuro.img_url;
+        else
+            elem.style.backgroundImage=`url(${fb_data.logo_fondo_oscuro.img_url})`;
     })
 }
 
