@@ -1,19 +1,19 @@
 console.log("firebase js cargado");
 const firebaseConfig = {
 
-  apiKey: "AIzaSyCAfc3CdhwxYATsZMBiBKAruy9e9qhTIaw",
+  apiKey: "AIzaSyBnaGqtsTYiixaqRYVLxP9fLITFVmsjHuM",
 
-  authDomain: "corralon-dorrego.firebaseapp.com",
+  authDomain: "corralondorrego.firebaseapp.com",
 
-  databaseURL: "https://corralon-dorrego-default-rtdb.firebaseio.com",
+  databaseURL: "https://corralondorrego-default-rtdb.firebaseio.com",
 
-  projectId: "corralon-dorrego",
+  projectId: "corralondorrego",
 
-  storageBucket: "corralon-dorrego.firebasestorage.app",
+  storageBucket: "corralondorrego.firebasestorage.app",
 
-  messagingSenderId: "129980074634",
+  messagingSenderId: "529530617501",
 
-  appId: "1:129980074634:web:f40405855b8e7b29d7fb73"
+  appId: "1:529530617501:web:0a38524cf063fba03b9e74"
 
 };
 
