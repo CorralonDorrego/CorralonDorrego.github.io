@@ -14,7 +14,7 @@
         <script src="./js/std_f_carga.js"></script>
         <script src="./js/std_init.js"></script>
         <script src="./js/carrito.js"></script>
-        <script src="./js/index.js"></script>
+        <script src="./js/admin.js"></script>
     </head>
     <body>
         <div class="loading_display">
@@ -87,9 +87,182 @@
         </header>
 
 
-        <!--especifico de index.html-->
-        
-        <!--especifico de index.html-->
+        <!--especifico de admin.html-->
+        <div class="std_container">
+            <div>
+                <div class="login_container">
+                    <span class="display_none">Bienvenido, Administrador</span>
+                    <div>
+                        <span>Email</span>
+                        <input id="email_input" type="text"/>
+                    </div>
+                    <div>
+                        <span>Password</span>
+                        <input id="pass_input" type="password"/>
+                    </div>
+                    <div>
+                        <input id="sign_in_button" type="button" value="sign in" class="hover_opcacity_change clickable">
+                        <span id="err_login" class="display_none">Error, intente nuevamente</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="std_container_admin" class="std_container display_none">
+            <div>
+                <input id="send" type="button" value="Enviar Informacion (esto va a guardar los cambios que hayas hecho y se van a ver reflejados inmediatamente en el sitio web)" class="clickable hover_opcacity_change">
+                <span>si en algun momento cometes un error y queres revertir una accion, refrezca la pagina y se van a revertir los cambios que hayas hecho</span>
+                <span><br>para la carga de imagenes, debe usar el host de imagenes <a href="https://imgbox.com/" style="color:#6eb8ff" class="hover_opcacity_change">imgbox.com</a>, o cualquier otro host de imagenes confiable que conozca</span>
+                <span class="titulo_tab">Contacto:</span>
+                <div class="tab">
+                    <div class="admin_text_input_wrapper"> 
+                        <span>Numero (sin c.area):</span>
+                        <input autocomplete="off" class="input_celular" type="text">
+                    </div>
+                    <div class="admin_text_input_wrapper"> 
+                        <span>email:</span>
+                        <input autocomplete="off" class="input_email" type="text">
+                    </div>
+                    <span class="subtitulo_tab">Redes:</span>
+                    <div class="admin_text_input_wrapper"> 
+                        <span>facebook (link):</span>
+                        <input autocomplete="off" class="input_facebook" type="text">
+                    </div>
+                    <div class="admin_text_input_wrapper"> 
+                        <span>instagram (link):</span>
+                        <input autocomplete="off" class="input_instagram" type="text">
+                    </div>
+                    <span class="subtitulo_tab">Direccion:</span>
+                    <div class="admin_text_input_wrapper"> 
+                        <span>Altura:</span>
+                        <input autocomplete="off" class="input_altura" type="text">
+                    </div>
+                    <div class="admin_text_input_wrapper"> 
+                        <span>Calle:</span>
+                        <input autocomplete="off" class="input_calle" type="text">
+                    </div>
+                    <div class="admin_text_input_wrapper"> 
+                        <span>Ciudad:</span>
+                        <input autocomplete="off" class="input_ciudad" type="text">
+                    </div>
+                </div>
+                <span class="titulo_tab">Customizacion:</span>
+                <div class="tab">
+                    <div class="admin_text_input_wrapper"> 
+                        <span>Presentacion de la empresa <a href="./index.html#nosotros" class="hover_opcacity_change" style="color:var(--color-principal)">(ver)</a>:</span>
+                        <textarea autocomplete="off" class="input_presentacion" rows="5" cols="50" placeholder="somos tu empresa de confianza porque..."></textarea>
+                    </div>
+                    <div class="admin_img_input_wrapper"> 
+                        <div class="admin_text_input_wrapper"> 
+                            <span>Imagen Banner:</span>
+                            <input autocomplete="off" class="input_img_banner" type="text">
+                        </div>
+                        <div class="admin_text_input_wrapper"> 
+                            <span>Banner:</span>
+                            <img class="display_img_banner" src="">   
+                        </div>
+                    </div>
+                    <div class="admin_img_input_wrapper"> 
+                        <div class="admin_text_input_wrapper"> 
+                            <span>Logo fondo azul (header):</span>
+                            <input autocomplete="off" class="input_logo" type="text">
+                        </div>
+                        <div class="admin_text_input_wrapper"> 
+                            <span>Logo fondo azul:</span>
+                            <img class="display_logo" style="height: 100px;" src="">   
+                        </div>
+                    </div>
+                    <div class="admin_img_input_wrapper"> 
+                        <div class="admin_text_input_wrapper"> 
+                            <span>Logo fondo oscuro (footer):</span>
+                            <input autocomplete="off" class="input_logo_oscuro" type="text">
+                        </div>
+                        <div class="admin_text_input_wrapper"> 
+                            <span>Logo fondo oscuro:</span>
+                            <img class="display_logo_oscuro" style="height: 100px;" src="">   
+                        </div>
+                    </div>
+                </div>
+
+
+                <span class="titulo_tab ">Categorias:</span>
+                <span id="array_cats" class="display_none">[]</span>
+                
+                <span class="separador-h"></span>
+                
+            </div>
+        </div>
+
+        <div id='template_cat' class="contador_tab_container display_none" > <!--template categoria-->
+            <span class="subtitulo_tab contador_categorias subtitulo_categoria"></span>
+            <div class="tab">
+                <div class="std_same_line">
+                    <img class="remove hover_opcacity_change clickable" src="./imgs/menu_close.svg" style="align-self: center;">
+                    <span class="subtitulo_tab titulo_nombre_cat" style="color:var(--color-destacado)"></span>
+                </div>
+                <!--nombre cat-->
+                <div class="admin_text_input_wrapper"> 
+                    <span>Nombre de la categoria:</span>
+                    <input autocomplete="off" class="input_nombre_cat" type="text">
+                </div>
+                <!--img cat-->
+                <div class="admin_img_input_wrapper"> 
+                    <div class="admin_text_input_wrapper"> 
+                        <span>URL Imagen:</span>
+                        <input autocomplete="off" class="input_img_url_cat" type="text">
+                    </div>
+                    <div class="admin_text_input_wrapper"> 
+                        <span>Imagen de la categoria:</span>
+                        <img class="display_img_url_cat" src="">   
+                    </div>
+                </div>
+                <span class="array_prods display_none">[]</span>
+                
+            </div>
+        </div>
+
+        <div id='template_prod' class="contador_tab_container display_none"> <!--template producto-->
+            <span class="subtitulo_tab contador_productos" style="color:var(--color-principal)"></span>
+            <div class="tab">
+                <img class="remove hover_opcacity_change clickable" src="./imgs/menu_close.svg">
+                <!--nombre-->
+                <div class="admin_text_input_wrapper"> 
+                    <span>Nombre:</span>
+                    <input autocomplete="off" class="input_nombre_prod" type="text">
+                </div>
+                <!--descripcion-->
+                <div class="admin_text_input_wrapper"> 
+                    <span>Descripcion:</span>
+                    <textarea autocomplete="off" class="input_desc_prod" rows="5" cols="50" placeholder=""></textarea>
+                </div>
+                <!--imagen-->
+                <div class="admin_img_input_wrapper"> 
+                    <div class="admin_text_input_wrapper"> 
+                        <span>Imagen:</span>
+                        <input autocomplete="off" class="input_img_url_prod" type="text">
+                    </div>
+                    <div class="admin_text_input_wrapper"> 
+                        <span>Imagen del producto:</span>
+                        <img class="display_img_url_prod" src="">   
+                    </div>
+                </div>
+                <!--Moneda-->
+                <div class="admin_text_input_wrapper"> 
+                    <span>Moneda:</span>
+                    <input autocomplete="off" class="input_moneda_prod" type="text">
+                </div>
+                <!--Valor-->
+                <div class="admin_text_input_wrapper"> 
+                    <span>Valor:</span>
+                    <input autocomplete="off" class="input_valor_prod" type="text">
+                </div>
+                <!--Unidad-->
+                <div class="admin_text_input_wrapper"> 
+                    <span>Unidad:</span>
+                    <input autocomplete="off" class="input_unidad_prod" type="text">
+                </div>
+            </div>
+        </div>
+        <!--especifico de admin.html-->
 
 
         <footer id="contacto" class="std_container">

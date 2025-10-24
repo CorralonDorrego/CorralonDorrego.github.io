@@ -28,14 +28,14 @@ function cargar_info_contacto(contacto){
         }
     })
     document.querySelectorAll(".contacto_numero").forEach(elem => {
-        elem.append(`+${contacto.celular.area} ${contacto.celular.numero}`);
-        elem.href=`tel:+${contacto.celular.area}${contacto.celular.numero}`;
+        elem.append(`${contacto.celular}`);
+        elem.href=`tel:${contacto.celular}`;
     })//https://www.facebook.com/HasAceros
     document.querySelectorAll(".contacto_facebook").forEach(elem => {
-        elem.href=`https://www.facebook.com/${contacto.facebook}`;
+        elem.href=contacto.facebook;
     })
     document.querySelectorAll(".contacto_instagram").forEach(elem => {
-        elem.href=`https://www.instagram.com/${contacto.instagram}`;
+        elem.href=contacto.instagram;
     })
     
 }

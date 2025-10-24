@@ -43,6 +43,28 @@ document.addEventListener('DOMContentLoaded', async ()=>{
         total_container.style.display = 'none';
     }
 
+
+    completar_compra.addEventListener('click', () =>{
+        let mensaje = "Buenas tardes! estoy interesado/a en concretar una compra de:\n";
+        const prodarray = get_prodarray();
+        prodarray.forEach(ls_id => {
+            const ids = lsid_to_cid_pid(ls_id);
+            const prod = fb_data.productos[ids.cat_id].productos[ids.prod_id];
+            const cantidad = carrito_get_producto(ids.cat_id, ids.prod_id);
+            let append = `${cantidad}${prod.unidad} de "${prod.nombre}"        = ${prod.moneda}${prod.valor*cantidad}    (${prod.moneda}${prod.valor} c/${prod.unidad})\n`;
+            mensaje += append;
+        })
+        mensaje += "\nTOTAL:\n";
+        const total = calcular_costo_total();
+        
+        for(const moneda in total)
+        {
+            mensaje+=`${moneda}${total[moneda]}\n`;
+        }
+
+        window.location.href = `https://wa.me/${fb_data.contacto.celular}?text=${encodeURIComponent(mensaje)}`;
+    })
+
     actualizar_precios();
     
 

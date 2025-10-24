@@ -31,7 +31,11 @@ function cargar_categorias_en_index(productos){
 
         img = document.createElement('img');
 
-        prod_ids = Object.keys(categoria.productos);
+        try{
+            prod_ids = Object.keys(categoria.productos);
+        }catch(e){//error mas comun es que la categoria no tenga productos
+            prod_ids=[];
+        }
         
 
         img.src = categoria.img_url;
