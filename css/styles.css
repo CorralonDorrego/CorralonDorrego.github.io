@@ -701,7 +701,7 @@ body {
     font-size: 30px;
 }
 #nosotros{
-    padding-bottom: 610px;
+    padding-bottom: 200px;
 }
 #contacto .logo_oscuro_img {
     margin-top: 20px;
@@ -890,6 +890,11 @@ footer>div>div>a>img {
     background-color: color-mix(in srgb, var(--color-destacado), transparent 60%);
     border-radius: 10px;
     margin-left: 50px;
+}
+
+#espaciador_footer {
+    height: 400px;
+    width: 100%;
 }
 @media (max-width: 1080px) {
 
